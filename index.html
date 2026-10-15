@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor Accesible de Cuentos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Librería PDF.js para procesar el cuento.pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- Librería PageFlip para el efecto visual de libro real -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+</head>
+<body>
+    <header class="header" role="banner">
+        <h1>Lectura Accesible de Cuentos</h1>
+        
+        <!-- Panel de control accesible para personas con baja visión y lectores de pantalla -->
+        <nav class="controls-panel" aria-label="Controles de accesibilidad y lectura">
+            <!-- Botones para modificar el tamaño de la letra y vista -->
+            <div class="control-group">
+                <button id="btn-zoom-in" class="accessibility-btn" aria-label="Agrandar letra y tamaño del libro" title="Agrandar letra">+</button>
+                <button id="btn-zoom-out" class="accessibility-btn" aria-label="Achicar letra y tamaño del libro" title="Achicar letra">-</button>
+            </div>
+
+            <!-- Botones de navegación de página -->
+            <div class="control-group">
+                <button id="btn-prev" class="nav-btn" aria-label="Página anterior" title="Página anterior">◀ Anterior</button>
+                <span id="page-indicator" aria-live="polite" aria-atomic="true" class="page-num">Página 1</span>
+                <button id="btn-next" class="nav-btn" aria-label="Página siguiente" title="Página siguiente">Siguiente ▶</button>
+            </div>
+
+            <!-- Botón de voz en alta voz -->
+            <div class="control-group">
+                <button id="btn-tts" class="tts-btn" aria-label="Leer página en voz alta en español" title="Lectura en voz alta">
+                    🔊 Leer en Voz Alta
+                </button>
+            </div>
+        </nav>
+
+        <div id="loading" aria-live="assertive">Cargando el cuento, por favor espere...</div>
+    </header>
+
+    <main class="book-container" role="main">
+        <!-- Contenedor del Libro interactivo -->
+        <div id="flip-book" class="flip-book" aria-label="Cuento interactivo"></div>
+    </main>
+
+    <!-- Declaratoria sobre el uso de Inteligencia Artificial Generativa (IAG) -->
+    <footer class="iag-declaration" role="contentinfo">
+        <hr />
+        <p><strong>Declaratoria de Uso de IAG:</strong> Este recurso educativo interactivo y sus adaptaciones de accesibilidad han sido optimizados con la asistencia de tecnologías de Inteligencia Artificial Generativa (IAG), garantizando estándares inclusivos para personas con baja visión y diversidad funcional.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1b2631;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 18px; /* Tamaño base accesible */
+}
+
+.header {
+    text-align: center;
+    padding: 15px;
+    background-color: #2c3e50;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: #f39c12;
+}
+
+/* Panel de Controles Accesibles */
+.controls-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: #34495e;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #f39c12;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Estilos de Botones de Alto Contraste */
+button {
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+    outline-offset: 3px;
+}
+
+button:focus-visible {
+    outline: 4px solid #f1c40f;
+}
+
+.accessibility-btn {
+    background-color: #f39c12;
+    color: #000;
+    font-size: 1.6rem;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accessibility-btn:hover {
+    background-color: #d35400;
+    color: #fff;
+}
+
+.nav-btn {
+    background-color: #2980b9;
+    color: #ffffff;
+    padding: 10px 18px;
+    font-size: 1.1rem;
+}
+
+.nav-btn:hover {
+    background-color: #1a5276;
+}
+
+.tts-btn {
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+}
+
+.tts-btn:hover {
+    background-color: #1e8449;
+}
+
+.tts-active {
+    background-color: #e74c3c !important;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.page-num {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f1c40f;
+    min-width: 90px;
+    text-align: center;
+}
+
+#loading {
+    margin-top: 15px;
+    color: #f1c40f;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Contenedor del Libro */
+.book-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    overflow: auto;
+}
+
+.flip-book {
+    display: none;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease;
+}
+
+.page {
+    background-color: #ffffff;
+    border: 1px solid #bdc3c7;
+    overflow: hidden;
+    position: relative;
+}
+
+.page canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stf__wrapper {
+    background-color: transparent !important;
+}
+
+/* Declaratoria IAG */
+.iag-declaration {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 0.95rem;
+    color: #bdc3c7;
+}
+
+.iag-declaration hr {
+    border: 0;
+    height: 1px;
+    background: #4a6572;
+    margin-bottom: 15px;
+}
